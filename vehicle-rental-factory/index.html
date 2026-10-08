@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Auto Rentals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>Pacific Auto Rentals</h1>
+                <p>Vehicle Rental Management System</p>
+            </div>
+
+            <span class="pattern-badge">
+                Factory Design Pattern
+            </span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <span>Total Rentals</span>
+                <h2 id="totalRentals">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Cars</span>
+                <h2 id="totalCars">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>SUVs</span>
+                <h2 id="totalSUVs">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Vans</span>
+                <h2 id="totalVans">0</h2>
+            </div>
+
+        </section>
+
+        <section class="main-grid">
+
+            <div class="panel">
+
+                <div class="panel-heading">
+                    <h2>Create Rental</h2>
+                    <p>Enter the customer and vehicle information below.</p>
+                </div>
+
+                <form id="rentalForm">
+
+                    <div class="form-group">
+                        <label for="customerName">Customer Name</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="e.g. Lina Tari"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="vehicleType">Vehicle Type</label>
+
+                            <select id="vehicleType" required>
+                                <option value="">Select vehicle</option>
+                                <option value="car">Car</option>
+                                <option value="suv">SUV</option>
+                                <option value="van">Van</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rentalDays">Rental Days</label>
+
+                            <input
+                                type="number"
+                                id="rentalDays"
+                                min="1"
+                                placeholder="e.g. 3"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicleModel">Vehicle Model</label>
+
+                        <input
+                            type="text"
+                            id="vehicleModel"
+                            placeholder="e.g. Toyota Hilux"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registration">Registration Number</label>
+
+                        <input
+                            type="text"
+                            id="registration"
+                            placeholder="e.g. TAA 125"
+                            required>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Create Rental
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="panel information-panel">
+
+                <div class="panel-heading">
+                    <h2>Rental Rates</h2>
+                    <p>Current daily rental rates.</p>
+                </div>
+
+                <div class="rate-card">
+                    <div>
+                        <strong>🚗 Car</strong>
+                        <small>Standard passenger vehicle</small>
+                    </div>
+                    <span>6,000 VUV/day</span>
+                </div>
+
+                <div class="rate-card">
+                    <div>
+                        <strong>🚙 SUV</strong>
+                        <small>Suitable for rough roads</small>
+                    </div>
+                    <span>9,000 VUV/day</span>
+                </div>
+
+                <div class="rate-card">
+                    <div>
+                        <strong>🚐 Van</strong>
+                        <small>Passenger and group transport</small>
+                    </div>
+                    <span>12,000 VUV/day</span>
+                </div>
+
+                <div class="pattern-info">
+                    <strong>Factory Pattern</strong>
+
+                    <p>
+                        The form sends the selected vehicle
+                        type to VehicleFactory. The Factory
+                        decides which vehicle object to create.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="records-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Rental Records</h2>
+                    <p>Vehicles created by the VehicleFactory.</p>
+                </div>
+            </div>
+
+            <div id="rentalRecords" class="rental-records">
+
+                <div id="emptyMessage" class="empty-message">
+                    <div class="empty-icon">🚘</div>
+                    <h3>No rentals created yet</h3>
+                    <p>
+                        Complete the rental form to
+                        create the first vehicle rental.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        ITDI110 • Object-Oriented Programming
+        & Software Development
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
